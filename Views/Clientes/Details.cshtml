@@ -1,0 +1,35 @@
+﻿@model TesteASPNET.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do cliente</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CLI_NOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CLI_NOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CLI_DATANASCIMENTO)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CLI_DATANASCIMENTO)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CLI_ATIVO)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CLI_ATIVO)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CLI_ID">Editar cliente</a> |
+    <a asp-action="Index">Voltar a listagem de clientes</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TesteASPNET.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem de clientes</h1>
+
+<p>
+    <a asp-action="Create">Criar novo cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome do cliente
+            </th>
+            <th>
+                Data de nascimento do cliente
+            </th>
+            <th>
+                Ativo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLI_NOME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLI_DATANASCIMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLI_ATIVO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CLI_ID">Atualizar ou editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CLI_ID">Detalhes do cliente</a> |
+                <a asp-action="Delete" asp-route-id="@item.CLI_ID">Remover cliente</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
